@@ -16,7 +16,9 @@ TARGET_KEYWORDS = [
 REPLY_TEXT = "Ok"
 NOTIFY_MESSAGE = "Abhijith P A in"
 
-USER_DATA_DIR = "/home/ubuntu/pw-user-data"  # AWS path
+# 🔥 IMPORTANT: session stored here
+USER_DATA_DIR = "/home/ubuntu/pw-user-data"
+
 LOOP_DELAY = 1
 # ==========================================
 
@@ -60,7 +62,7 @@ with sync_playwright() as p:
 
     browser = p.chromium.launch_persistent_context(
         USER_DATA_DIR,
-        headless=True,   # 🔥 set False first time to scan QR
+        headless=True,   # ⚠️ FIRST RUN → change to False
         args=["--no-sandbox"]
     )
 
